@@ -17,7 +17,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         cash_on_hand.append([row[0], float(row[1])])
 
 cash_deficits = []
-help
+#o12g
 previous_cash = cash_on_hand[0][1]  # Cash-on-Hand on the first day
 highest_increment = 0  # Initialize the highest increment to 0
 
