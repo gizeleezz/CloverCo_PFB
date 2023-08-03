@@ -21,12 +21,13 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
 
       
 
-
+# Create a function to find the highest overhead 
 def highestOverheads(Overhead_expenses):
     highest_overhead=0.0
     name_of_overhead=""
-    # Iterate through each expense in the list of overhead expenses.
+    # Iterate through the overhead expenses to find the highest
     for expense in Overhead_expenses:
+    # Check to see if the current expense percentage is higher than the highest amount previously discovered
         if expense[1]> highest_overhead:
             highest_overhead=expense[1]
             name_of_overhead=expense[0]
