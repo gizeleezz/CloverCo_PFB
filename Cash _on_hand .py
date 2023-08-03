@@ -23,7 +23,7 @@ highest_increment = 0  # Initialize the highest increment to 0
 
 for day, cash in cash_on_hand[1:]:  # Starting from the second day
     if cash > previous_cash:
-        increment = cash - previous_cash
+        increment = cash - previous_cash # Calculates increment value
         if increment > highest_increment:
             highest_increment = increment
     else:
