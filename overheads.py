@@ -19,17 +19,20 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         Overhead_expenses.append([row[0], float(row[1])])
 
-      
-
-
+# Create a function to find the highest overhead 
 def highestOverheads(Overhead_expenses):
     highest_overhead=0.0
     name_of_overhead=""
 
+# Iterate through the overhead expenses to find the highest
     for expense in Overhead_expenses:
+ # Check to see if the current expense percentage is higher than the highest amount previously discovered
         if expense[1]> highest_overhead:
+ # Updating the highest overhead and the overhead category name that corresponds
             highest_overhead=expense[1]
             name_of_overhead=expense[0]
+# Return indicating the name of highest overhead and the percentage
     return f"[HIGHEST OVERHEAD]: {name_of_overhead}, {highest_overhead}%"
+# Run the highestOverheads function, then save the outcome
 result=highestOverheads(Overhead_expenses)
 print(result)
