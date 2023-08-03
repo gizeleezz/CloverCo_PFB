@@ -25,7 +25,7 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
 def highestOverheads(Overhead_expenses):
     highest_overhead=0.0
     name_of_overhead=""
-# Iterate through each expense in the list of overhead expenses.
+    # Iterate through each expense in the list of overhead expenses.
     for expense in Overhead_expenses:
         if expense[1]> highest_overhead:
             highest_overhead=expense[1]
