@@ -47,7 +47,6 @@ def profit_and_loss(file_path):
                         highest_increment_amount=increment
                         
             previous_net_profit=current_net_profit
-        
         for day, amount, in profit_deficit_days:
             print(f"[PROFIT DEFICIT] DAY: {day}, AMOUNT: {amount} USD")
         if highest_increment_day != 0:
