@@ -9,13 +9,21 @@ csv_folder_path=Path.cwd()/ "csv_reports"
 file_path=csv_folder_path/"profit_and_loss(2).csv"
 
 def profit_and_loss(file_path):
-    # Initialize variables  
-    profit_deficit_days=[]
-    highest_increment_day=0
-    highest_increment_amount=0
-    previous_net_profit=0
-    previous_net_profit= None
+    """ This function analyses profit and loss csv to find profit deficits if current day profit is less than previous day or
+     find the highest net profit surplus and day if net prfit is always increasing 
 
+     parameters: (file_path)= path to csv file that contains profit and loss data
+
+     Function returns day and profit deficit if net profit on current day is less than previous day 
+     if net profit is always increasing, function will return highest net profit increment and day 
+    """
+    # Initialize variables  
+    profit_deficit_days=[] # store days with profit deficit
+    highest_increment_day=0 # store day with highest net profit increment
+    highest_increment_amount=0 # store the amount of the highest net profit increment
+    previous_net_profit= None # initialise as none 
+
+    # open csv file
     with open(file_path) as file:  
         reader = csv.reader(file)  
       
@@ -26,7 +34,7 @@ def profit_and_loss(file_path):
           
    
       
-    # Iterate through rows  
+    # Iterate through rows of csv file
         for row in reader:  
             current_day = int(row[0])   
             current_net_profit = int(row[4])   
@@ -38,21 +46,21 @@ def profit_and_loss(file_path):
                     profit_deficit_days.append((current_day,deficit_amount))
                    
                     
-                    
+                 # check for highest net profit increment   
             else:
                 if previous_net_profit is not None:
                     increment= current_net_profit - previous_net_profit
                     if increment > highest_increment_amount:
                         highest_increment_day=current_day
                         highest_increment_amount=increment
-                        
+            # update previous_net_profit for the next iteration            
             previous_net_profit=current_net_profit
         for day, amount, in profit_deficit_days:
             print(f"[PROFIT DEFICIT] DAY: {day}, AMOUNT: {amount} USD")
         if highest_increment_day != 0:
             print("[ NET PROFIT SURPLUS ] : Net profit each day is higher than previous day")
             print(f"[HIGHEST NET PROFIT SURPLUS]  Day: {highest_increment_day}, Amount: {highest_increment_amount} USD")    
-
+#call function to analyse profit or loss 
 profit_and_loss(file_path)
 
             
