@@ -25,11 +25,11 @@ highest_increment = 0  # Initialize the highest increment to 0
 
 for day, cash in cash_on_hand[1:]:  # Starting from the second day
     if cash > previous_cash:
-        increment = cash - previous_cash
+        increment = cash - previous_cash # Calculates increment value
         if increment > highest_increment:
             highest_increment = increment
     else:
-        deficit = previous_cash - cash
+        deficit = previous_cash - cash  
         cash_deficits.append([day, deficit])
     previous_cash = cash
 
@@ -38,4 +38,4 @@ print("Cash-on-Hand is not always increasing.")
 print("Cash Deficits:")
 for day, deficit in cash_deficits:
     deficit_rounded = round(deficit, 3)
-    print(f"Day {day}, Cash Deficit AMOUNT: USD{deficit_rounded}")
+    print(f"Day {day}, Cash Deficit AMOUNT: USD{deficit_rounded}") # Prints highest cash deficeit and day.  
