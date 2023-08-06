@@ -1,15 +1,13 @@
-# Import CSV module  
-import csv 
- 
-# Initialize variables 
-highest_increment_day = 0    
-highest_increment_amount = 0 
- 
-with open('Cash_on_Hand.csv') as file: 
-    reader = csv.reader(file) 
-    
-# Skip header row 
-    next(reader) 
+from pathlib import Path
+import csv
+
+# create a file to csv file.
+fp = Path.cwd() / "Cash_on_Hand.csv"
+#comment
+# read the csv file to append profit and quantity from the csv.
+with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+    reader = csv.reader(file)
+    next(reader)  # skip header
 
     # create an empty lists to store the values for all 90 days
     cash_on_hand = []
@@ -18,6 +16,7 @@ with open('Cash_on_Hand.csv') as file:
     for row in reader:
         cash_on_hand.append([row[0], float(row[1])])
 
+is_increasing=True
 cash_deficits = []
 
 previous_cash = cash_on_hand[0][1]  # Cash-on-Hand on the first day
@@ -25,7 +24,7 @@ highest_increment = 0  # Initialize the highest increment to 0
 
 for day, cash in cash_on_hand[1:]:  # Starting from the second day
     if cash > previous_cash:
-        increment = cash - previous_cash # Calculates increment value
+        increment = cash - previous_cash #Calculate increment value
         if increment > highest_increment:
             highest_increment = increment
     else:
