@@ -5,7 +5,7 @@ import csv
 highest_increment_day = 0    
 highest_increment_amount = 0 
  
-with open('profit_and_loss(2).csv') as file: 
+with open('Cash_on_hand.csv') as file: 
     reader = csv.reader(file) 
 
     # create an empty lists to store the values for all 90 days
