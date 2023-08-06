@@ -22,12 +22,11 @@ cash_deficits = []
 previous_cash = cash_on_hand[0][1]  # Cash-on-Hand on the first day
 highest_increment = 0  # Initialize the highest increment to 0
 
-# Check if cash values are increasing
-is_increasing = True
-for i in range(1, len(cash_on_hand)):
-    if cash_on_hand[i][1] < cash_on_hand[i - 1][1]:
-        is_increasing = False
-        break
+for day, cash in cash_on_hand[1:]:  # Starting from the second day
+    if cash > previous_cash:
+        increment = cash - previous_cash
+        if increment > highest_increment:
+            highest_increment = increment
     
     else:
         deficit = previous_cash - cash  
