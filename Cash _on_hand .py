@@ -1,14 +1,15 @@
-# Import CSV module  
-import csv 
- 
-# Initialize variables 
-highest_increment_day = 0    
-highest_increment_amount = 0 
- 
-with open('Cash_on_hand.csv') as file: 
-    reader = csv.reader(file) 
+from pathlib import Path
+import csv
 
-    # create an empty lists to store the values for all 90 days
+# create a file to csv file.
+fp = Path.cwd() / "Cash_on_Hand.csv"
+
+# read the csv file to append profit and quantity from the csv.
+with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+    reader = csv.reader(file)
+    next(reader)  # skip header
+
+ # create an empty lists to store the values for all 90 days
     cash_on_hand = []
 
     # append time sheet and sales record into the salesRecords list
