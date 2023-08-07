@@ -38,11 +38,11 @@ for day, cash in cash_on_hand[1:]:  # Starting from the second day
 
 # Print the cash deficits and the days of cash deficits
 if is_increasing:
-    print("Cash on each day is higher than the previous day.")
-    print(f"Highest Increment: USD{round(highest_increment, 2)}")
+    print("[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    print(f"[HIGHEST CASH SURPLUS]: Day {day}, Amount: USD{round(highest_increment, 2)}")
 else:
     print("Cash-on-Hand is not always increasing.")
     print("Cash Deficits:")
     for day, deficit in cash_deficits:
         deficit_rounded = round(deficit, 2)
-        print(f"Day {day}, Cash Deficit AMOUNT: USD{deficit_rounded}")
+        print(f"[CASH DEFICIT] Day:{day}, AMOUNT: USD{deficit_rounded}")
