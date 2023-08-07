@@ -7,7 +7,7 @@ csv_folder_path=Path.cwd()/ "csv_reports"
 file_path=csv_folder_path/"Cash_on_Hand.csv"
 
 # read the csv file to append profit and quantity from the csv.
-with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)  # skip header
 
