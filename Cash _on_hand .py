@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-def analyse_cashon_hand():
+def analyse_cash_on_hand():
     """ This function reads cash on hand data from csv file and calculates cash deficits if cash on hand is lower on current day than previous day
         or, it will find the highest cash surplus if cash on hand is always increasing 
 
