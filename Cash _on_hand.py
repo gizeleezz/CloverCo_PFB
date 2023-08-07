@@ -24,25 +24,27 @@ def analyse_cash_on_hand():
         for row in reader:
             cash_on_hand.append([row[0], float(row[1])])
 
-    is_increasing=True
-    cash_deficits = []
+    is_increasing=True # Flag to track if cash on each day is increasing
+    cash_deficits = [] # List to store cash deficits for each day
 
     previous_cash = cash_on_hand[0][1]  # Cash-on-Hand on the first day
     highest_increment = 0  # Initialize the highest increment to 0
 
+# Iterate through cash_on_hand starting from the second day
     for day, cash in cash_on_hand[1:]:  # Starting from the second day
         if cash > previous_cash:
-            increment = cash - previous_cash
+            increment = cash - previous_cash # Calculate the cash increment from the previous day
             if increment > highest_increment:
-                highest_increment = increment
+                highest_increment = increment # Update the highest increment when necessary
         
         else:
-            is_increasing = False
-        deficit = previous_cash - cash  
-        cash_deficits.append([day, deficit])
-        previous_cash = cash
+            is_increasing = False # Cash on current day is not higher, it is FALSE
 
-    # Print the cash deficits and the days of cash deficits
+        deficit = previous_cash - cash   # Calculate the cash deficit
+        cash_deficits.append([day, deficit])  # Store the day and deficit in the cash_deficits list
+        previous_cash = cash  # Update previous_cash for the next iteration
+
+    # Print the results based on the flag and stored data
     if is_increasing:
         print("[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
         print(f"[HIGHEST CASH SURPLUS]: Day {day}, Amount: USD{round(highest_increment, 2)}")
