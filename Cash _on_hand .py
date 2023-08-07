@@ -1,11 +1,10 @@
 from pathlib import Path
 import csv
 
-# create a file to csv file.
-fp = Path.cwd() / "Cash_on_Hand.csv"
-
 # Open CSV file    
 csv_folder_path=Path.cwd()/ "csv_reports"
+
+file_path=csv_folder_path/"Cash_on_Hand.csv"
 
 # read the csv file to append profit and quantity from the csv.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
