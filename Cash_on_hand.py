@@ -46,13 +46,20 @@ def analyse_cash_on_hand():
         previous_cash = cash  # Update previous_cash for the next iteration
 
     # Print the results based on the flag and stored data
+    result = ""
+    
     if is_increasing:
-        print("[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-        print(f"[HIGHEST CASH SURPLUS]: Day {day}, Amount: USD{round(highest_increment, 2)}")
+        result += "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n"
+        result += f"[HIGHEST CASH SURPLUS]: Day {day}, Amount: USD{round(highest_increment, 2)}\n"
     else:
-        print("Cash-on-Hand is not always increasing.")
-        print("Cash Deficits:")
+    
+        
         for day, deficit in cash_deficits:
             deficit_rounded = round(deficit, 2)
-            print(f"[CASH DEFICIT] Day:{day}, AMOUNT: USD{deficit_rounded}")
-analyse_cash_on_hand()
+            result += f"[CASH DEFICIT] Day:{day}, AMOUNT: USD{deficit_rounded}\n"
+    
+    return result
+
+# Call the analyse_cash_on_hand() function
+cash_on_hand_output = analyse_cash_on_hand()
+print(cash_on_hand_output)

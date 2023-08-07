@@ -55,12 +55,15 @@ def profit_and_loss():
                         highest_increment_amount=increment
             # update previous_net_profit for the next iteration            
             previous_net_profit=current_net_profit
-        for day, amount, in profit_deficit_days:
-            print(f"[PROFIT DEFICIT] DAY: {day}, AMOUNT: {amount} USD")
+        result = ""
+        for day, amount in profit_deficit_days:
+            result += f"[PROFIT DEFICIT] DAY: {day}, AMOUNT: {amount} USD\n"
         if highest_increment_day != 0:
-            print("[ NET PROFIT SURPLUS ] : Net profit each day is higher than previous day")
-            print(f"[HIGHEST NET PROFIT SURPLUS]  Day: {highest_increment_day}, Amount: {highest_increment_amount} USD")    
-#call function to analyse profit or loss 
-profit_and_loss()
+            result += "[ NET PROFIT SURPLUS ] : Net profit each day is higher than previous day\n"
+            result += f"[HIGHEST NET PROFIT SURPLUS]  Day: {highest_increment_day}, Amount: {highest_increment_amount} USD\n"
+    return result
 
+# Call function to analyse profit or loss
+profit_loss_output = profit_and_loss()
+print(profit_loss_output)
             
