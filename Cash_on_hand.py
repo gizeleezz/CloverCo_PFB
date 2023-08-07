@@ -40,9 +40,8 @@ def analyse_cash_on_hand():
         
         else:
             is_increasing = False # Cash on current day is not higher, it is FALSE
-
-        deficit = previous_cash - cash   # Calculate the cash deficit
-        cash_deficits.append([day, deficit])  # Store the day and deficit in the cash_deficits list
+            deficit = previous_cash - cash   # Calculate the cash deficit
+            cash_deficits.append([day, deficit])  # Store the day and deficit in the cash_deficits list
         previous_cash = cash  # Update previous_cash for the next iteration
 
     # Print the results based on the flag and stored data
