@@ -8,7 +8,7 @@ csv_folder_path=Path.cwd()/ "csv_reports"
 
 file_path=csv_folder_path/"profit_and_loss(2).csv"
 
-def profit_and_loss(file_path):
+def profit_and_loss():
     """ This function analyses profit and loss csv to find profit deficits if current day profit is less than previous day or
      find the highest net profit surplus and day if net prfit is always increasing 
 
@@ -61,6 +61,6 @@ def profit_and_loss(file_path):
             print("[ NET PROFIT SURPLUS ] : Net profit each day is higher than previous day")
             print(f"[HIGHEST NET PROFIT SURPLUS]  Day: {highest_increment_day}, Amount: {highest_increment_amount} USD")    
 #call function to analyse profit or loss 
-profit_and_loss(file_path)
+profit_and_loss()
 
             

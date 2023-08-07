@@ -22,7 +22,7 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
       
 
 # Create a function to find the highest overhead 
-def highestOverheads(Overhead_expenses):
+def highestOverheads():
     """ This function finds and returns the highest overhead expense and the corresponding percentage 
         parameters : overhead_expenses:a list that consists of overhead expenses, that contains name of overhead and corresponding percentage
         The function will return the name of overhead and percentageof highest overhead expense
@@ -39,5 +39,5 @@ def highestOverheads(Overhead_expenses):
     # Return function indicating the name of highest overhead and the percentage
     return f"[HIGHEST OVERHEAD]: {name_of_overhead}, {highest_overhead}%"
 # Run the highestOverheads function, then save the outcome
-result=highestOverheads(Overhead_expenses)
+result=highestOverheads()
 print(result)
