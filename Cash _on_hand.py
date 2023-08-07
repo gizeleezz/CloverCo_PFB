@@ -1,19 +1,13 @@
 from pathlib import Path
 import csv
 
-def analyse_cash_on_hand():
-    """ This function reads cash on hand data from csv file and calculates cash deficits if cash on hand is lower on current day than previous day
-        or, it will find the highest cash surplus if cash on hand is always increasing 
-
-        Function return cash deficit or cash surplus day and amount
-    """
 # Open CSV file    
-    csv_folder_path=Path.cwd()/ "csv_reports"
+csv_folder_path=Path.cwd()/ "csv_reports"
 
-    file_path=csv_folder_path/"Cash_on_Hand.csv"
+file_path=csv_folder_path/"Cash_on_Hand.csv"
 
     # read the csv file to append profit and quantity from the csv.
-    with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
+with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)  # skip header
 
@@ -23,6 +17,13 @@ def analyse_cash_on_hand():
         # append time sheet and sales record into the salesRecords list
         for row in reader:
             cash_on_hand.append([row[0], float(row[1])])
+
+def analyse_cash_on_hand():
+    """ This function reads cash on hand data from csv file and calculates cash deficits if cash on hand is lower on current day than previous day
+        or, it will find the highest cash surplus if cash on hand is always increasing 
+
+        Function return cash deficit or cash surplus day and amount
+    """
 
     is_increasing=True # Flag to track if cash on each day is increasing
     cash_deficits = [] # List to store cash deficits for each day
