@@ -52,4 +52,4 @@ def analyse_cash_on_hand():
         for day, deficit in cash_deficits:
             deficit_rounded = round(deficit, 2)
             print(f"[CASH DEFICIT] Day:{day}, AMOUNT: USD{deficit_rounded}")
-analyse_cashon_hand()
+analyse_cash_on_hand()
