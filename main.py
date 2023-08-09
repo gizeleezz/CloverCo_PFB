@@ -4,6 +4,13 @@ from overheads import highestOverheads
 from profit_loss import profit_and_loss
 
 def main():
+    """
+     This function generates a summary report by calling various functions and writing their outputs to a text file.
+
+     calls the highestOverheads, analyse_cash_on_hand, and profit_and_loss functions to capture their
+    outputs. It then opens a file for writing and generates a summary report containing the outputs of the called
+    functions.
+    """
     # Set the file path for the summary report file
     file_path_write = Path.cwd() / "summary_report.txt"
 
