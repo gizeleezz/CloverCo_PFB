@@ -1,7 +1,7 @@
 from pathlib import Path
-from Cash_on_hand import analyse_cash_on_hand
+from cash_on_hand import analyse_cash_on_hand
 from overheads import highestOverheads
-from Profit_Loss import profit_and_loss
+from profit_loss import profit_and_loss
 
 def main():
     # Set the file path for the summary report file

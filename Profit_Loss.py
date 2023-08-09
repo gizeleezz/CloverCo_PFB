@@ -6,7 +6,7 @@ from pathlib import Path
 # Open CSV file    
 csv_folder_path=Path.cwd()/ "csv_reports"
 
-file_path=csv_folder_path/"profit_and_loss(2).csv"
+file_path=csv_folder_path/"Profit_and_Loss.csv"
 
 def profit_and_loss():
     """ This function analyses profit and loss csv to find profit deficits if current day profit is less than previous day or
